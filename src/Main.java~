@@ -36,24 +36,12 @@ List<String> nomes = List.of(
 public void main() {
     System.out.println("Hello, Algoritmos");
 
-    linear_search();
+
 
     binary_search();
 }
 
-/**
- * Busca linear - O(n)
- */
-private void linear_search() {
-    /**
-     * Embora System.out.println(n) seja O(1), o for vai ser O(n) e devemos considerar isso na complexidade final.
-     */
-    nomes.forEach(System.out::println);
-}
-
-/**
- * Busca binária - O(log n)
- */
+// O(log n)
 public void binary_search() {
     var target = 7;
     var posicao = 0;
