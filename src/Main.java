@@ -39,6 +39,27 @@ public void main() {
     linear_search();
 
     binary_search();
+    
+    vacation();
+}
+
+private void vacation() {
+    var periodos = new int[]{30};
+    var possivelVacation = false;
+
+    for (int periodo : periodos) {
+
+        if (periodo < 5) {
+             possivelVacation = false;
+             break;
+        }
+
+        if (periodo >= 14) {
+           possivelVacation = true;
+        }
+    }
+
+    System.out.println(STR."Is valid vacation? \{possivelVacation}");
 }
 
 /**
