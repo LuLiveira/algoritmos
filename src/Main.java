@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 
 List<Integer> numeros = IntStream.rangeClosed(1, 100)
@@ -39,23 +40,66 @@ public void main() {
     linear_search();
 
     binary_search();
-    
+
     vacation();
+
+    find_phone_number();
+    find_phone_number2();
+}
+
+/**
+ * O(1)
+ */
+private void find_phone_number() {
+    var nome = "Lucas";
+    var phone_map = Map.of("Lucas", 123, "Joao", 321, "Maria", 456);
+
+    var phone_number = phone_map.getOrDefault(nome, 0);
+
+    System.out.println(STR."O telefone de \{nome} é: \{phone_number}");
+}
+
+/**
+ * O(n)
+ */
+private void find_phone_number2() {
+    var nome = "Lucas";
+    var phone_number = 0;
+    var phone_list = List.of(new Person("Lucas", 123), new Person("Joao", 321), new Person("Maria", 456));
+
+    /**
+     * O(n)
+     */
+    for (Person person : phone_list) {
+        if (person.nome().equals(nome)) {
+            phone_number = person.telefone();
+            break;
+        }
+    }
+
+    System.out.println(STR."O telefone de \{nome} é: \{phone_number}");
+
+    /**
+     * O(n)
+     */
+    for (Person person : phone_list) {
+        System.out.println(person.telefone());
+    }
 }
 
 private void vacation() {
-    var periodos = new int[]{30};
+    var periodos = new int[]{6, 10, 14};
     var possivelVacation = false;
 
     for (int periodo : periodos) {
 
         if (periodo < 5) {
-             possivelVacation = false;
-             break;
+            possivelVacation = false;
+            break;
         }
 
         if (periodo >= 14) {
-           possivelVacation = true;
+            possivelVacation = true;
         }
     }
 
