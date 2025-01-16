@@ -45,20 +45,20 @@ public void main() {
 
 //    vacation();
 
-//    findPhoneNumber();
-//    findPhoneNumber2();
-
     orderBySmallerToBigger();
 
 }
 
+
+/**
+ * O(n*2)
+ */
 private void orderBySmallerToBigger() {
     //SETUP
-    int maxValue = 1000; // Valor máximo permitido
     Random random = new Random();
     var randomList = new ArrayList<Integer>();
     for (int i = 0; i < 1000; i++) {
-        randomList.add(random.nextInt(maxValue + 1)); // Gera números entre 0 e 1000
+        randomList.add(Math.abs(random.nextInt()));
     }
     // FIM SETUP
 
@@ -67,7 +67,7 @@ private void orderBySmallerToBigger() {
     var randomListSize = randomList.size();
 
     for (int i = 0; i < randomListSize; i++) {
-        var smallerValue = randomList.get(0);
+        var smallerValue = randomList.getFirst();
         var smallerIndex = 0;
 
         for (int x = 0; x < randomList.size(); x++) {
@@ -82,46 +82,6 @@ private void orderBySmallerToBigger() {
     }
 
     System.out.println(STR."My sortList \{sortList}");
-}
-
-/**
- * O(1)
- */
-private void findPhoneNumber() {
-    var nome = "Lucas";
-    var phoneMap = Map.of("Lucas", 123, "Joao", 321, "Maria", 456);
-
-    var phoneNumber = phoneMap.getOrDefault(nome, 0);
-
-    System.out.println(STR."O telefone de \{nome} é: \{phoneNumber}");
-}
-
-/**
- * O(n)
- */
-private void findPhoneNumber2() {
-    var nome = "Lucas";
-    var phoneNumber = 0;
-    var phoneList = List.of(new Person("Lucas", 123), new Person("Joao", 321), new Person("Maria", 456));
-
-    /**
-     * O(n)
-     */
-    for (Person person : phoneList) {
-        if (person.nome().equals(nome)) {
-            phoneNumber = person.telefone();
-            break;
-        }
-    }
-
-    System.out.println(STR."O telefone de \{nome} é: \{phoneNumber}");
-
-    /**
-     * O(n)
-     */
-    for (Person person : phoneList) {
-        System.out.println(person.telefone());
-    }
 }
 
 private void vacation() {
