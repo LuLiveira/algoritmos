@@ -68,6 +68,7 @@ private void orderBySmallerToBigger() {
     }
 
     var randomListSize = randomList.size();
+    ArrayList<Integer> randomListCopy = (ArrayList<Integer>) randomList.clone();
 
     while (sortList.size() < randomListSize) {
         for (int i = 0; i <= randomList.size(); i++) {
@@ -87,7 +88,11 @@ private void orderBySmallerToBigger() {
 
     }
 
-    System.out.println(STR."My sortList \{sortList}");
+    System.out.println(STR."Minha sortList \{sortList}");
+    randomListCopy.sort(Integer::compareTo);
+    System.out.println(STR."Minha sortList \{randomListCopy}");
+
+
 }
 
 /**
