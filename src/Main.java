@@ -55,36 +55,30 @@ public void main() {
 private void orderBySmallerToBigger() {
     //SETUP
     int maxValue = 1000; // Valor máximo permitido
-
-    var randomList = new ArrayList<Integer>();
-    var sortList = new ArrayList<Integer>();
-    var smallerValue = 9999;
-    var smallerIndex = 0;
-
     Random random = new Random();
-
+    var randomList = new ArrayList<Integer>();
     for (int i = 0; i < 1000; i++) {
         randomList.add(random.nextInt(maxValue + 1)); // Gera números entre 0 e 1000
     }
+    // FIM SETUP
 
+
+    var sortList = new ArrayList<Integer>();
     var randomListSize = randomList.size();
 
-    while (sortList.size() < randomListSize) {
-        for (int i = 0; i <= randomList.size(); i++) {
+    for (int i = 0; i < randomListSize; i++) {
+        var smallerValue = randomList.get(0);
+        var smallerIndex = 0;
 
-            if (randomList.get(i) < smallerValue) {
-                smallerValue = randomList.get(i);
-                smallerIndex = i;
-            }
+        for (int x = 0; x < randomList.size(); x++) {
 
-            if(i == randomList.size() - 1) {
-                sortList.add(smallerValue);
-                randomList.remove(smallerIndex);
-                smallerValue = 99999;
-                smallerIndex = 0;
+            if (randomList.get(x) < smallerValue) {
+                smallerValue = randomList.get(x);
+                smallerIndex = x;
             }
         }
-
+        sortList.add(smallerValue);
+        randomList.remove(smallerIndex);
     }
 
     System.out.println(STR."My sortList \{sortList}");
