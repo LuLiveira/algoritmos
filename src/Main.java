@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Random;
 import java.util.stream.IntStream;
 
@@ -45,8 +44,23 @@ public void main() {
 
 //    vacation();
 
-    orderBySmallerToBigger();
+//    orderBySmallerToBigger();
 
+//    exampleReverse(1000);
+
+    System.out.println(fatorialReverse(5));
+}
+
+private int fatorialReverse(int fatorial) {
+    if(fatorial <= 1) return 1;
+    return fatorial * fatorialReverse(fatorial - 1);
+    //forma: 5! = 5 * 4 * 3 * 2 * 1.
+}
+
+private void exampleReverse(int num) {
+    System.out.println(num);
+    if (num <= 1) return; //Caso base
+    exampleReverse(num - 1); //Caso recursivo
 }
 
 
