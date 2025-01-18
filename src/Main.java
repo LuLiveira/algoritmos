@@ -48,7 +48,7 @@ public void main() {
 
 //    exampleReverse(1000);
 
-    System.out.println(fatorialReverse(5));
+//    System.out.println(fatorialReverse(5));
 }
 
 private int fatorialReverse(int fatorial) {
@@ -78,17 +78,16 @@ private void orderBySmallerToBigger() {
 
 
     var sortList = new ArrayList<Integer>();
-    var randomListSize = randomList.size();
 
-    for (int i = 0; i < randomListSize; i++) {
+    while (!randomList.isEmpty()) {
         var smallerValue = randomList.getFirst();
         var smallerIndex = 0;
 
-        for (int x = 0; x < randomList.size(); x++) {
+        for (int i = 0; i < randomList.size(); i++) {
 
-            if (randomList.get(x) < smallerValue) {
-                smallerValue = randomList.get(x);
-                smallerIndex = x;
+            if (randomList.get(i) < smallerValue) {
+                smallerValue = randomList.get(i);
+                smallerIndex = i;
             }
         }
         sortList.add(smallerValue);
