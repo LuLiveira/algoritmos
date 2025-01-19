@@ -1,4 +1,4 @@
-package main.java.br.com.lucas;
+package main.java.com.lucas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,18 +41,78 @@ public class Application {
 
     public void main() {
         System.out.println("Hello, Algoritmos");
+//
+//        linearSearch();
+//
+//        binarySearch();
+//
+//        vacation();
+//
+//        orderBySmallerToBigger();
+//
+//        exampleReverse(1000);
 
-//    linearSearch();
+//        System.out.println(fatorialReverse(5));
+//        System.out.println(reverseSum(0, List.of(2, 4, 6)));
+        ArrayList<Integer> objects = new ArrayList<>();
+        objects.add(999);
+        objects.add(1);
+        objects.add(99);
+        objects.add(1);
+//        System.out.println(reverseCountElements(objects));
+//        System.out.println(reverseCountElements(0, 0, List.of(2, 4, 6).size()));
 
-//    binarySearch();
+//        System.out.println(reverseMaxValue(List.of(9, 4, 6)));
+//        System.out.println(reverseMaxValue(0, 0, objects));
+        System.out.println(reverseMaxValue(objects));
+    }
 
-//    vacation();
 
-//    orderBySmallerToBigger();
+    private int reverseMaxValue(List<Integer> integers) {
+        if(integers.size() == 2){
+            return integers.get(0) > integers.get(1) ? integers.get(0) : integers.get(1);
+        } else {
+            int maxValue = reverseMaxValue(integers.subList(1, integers.size()));
+            return integers.getFirst() > maxValue ? integers.getFirst() : maxValue;
+        }
+    }
 
-//    exampleReverse(1000);
+    /**
+     * Minha função recursiva para retornar o maior valor
+     * @param actualValue
+     * @param index
+     * @param integers
+     * @return
+     */
+//    private int reverseMaxValue(int actualValue, int index, List<Integer> integers) {
+//        if (index >= integers.size() - 1) {
+//            return actualValue;
+//        }
+//
+//        int prevValue = integers.get(index);
+//
+//        if (prevValue > actualValue) {
+//            actualValue = prevValue;
+//        }
+//
+//        return reverseMaxValue(actualValue, index + 1, integers);
+//    }
 
-//    System.out.println(fatorialReverse(5));
+    private int reverseCountElements(List<Integer> integers) {
+        if (integers.isEmpty()) return 0;
+        integers.removeFirst();
+        return 1 + reverseCountElements(integers);
+    }
+
+    private int reverseCountElements(int totalItems, int start, int end) {
+        if (start >= end) return totalItems;
+        return reverseCountElements(totalItems + 1, start + 1, end);
+    }
+
+    private int reverseSum(int posicao, List<Integer> nums) {
+        if (posicao >= nums.size())
+            return 0;
+        return nums.get(posicao) + reverseSum(posicao + 1, nums);
     }
 
     private int fatorialReverse(int fatorial) {
