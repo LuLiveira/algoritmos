@@ -1,0 +1,43 @@
+package main.java.com.lucas.quicksort;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public record QuickSortExample (){
+
+
+    public static void quickSort() {
+        List<Integer> example = new ArrayList<>();
+        example.add(33);
+        example.add(77);
+        example.add(11);
+        example.add(12);
+        example.add(16);
+        example.add(99);
+        example.add(143);
+        System.out.println(quickSort(example));
+    }
+
+    static List<Integer> quickSort(List<Integer> integerList) {
+        var menores = new ArrayList<Integer>();
+        var maiores = new ArrayList<Integer>();
+        if (integerList.isEmpty() || integerList.size() < 2) {
+            return integerList;
+        } else {
+            var pivo = integerList.getFirst();
+            for (int i = 1; i < integerList.size(); i++) {
+                if (integerList.get(i) <= pivo) {
+                    menores.add(integerList.get(i));
+                }
+                if (integerList.get(i) > pivo) {
+                    maiores.add(integerList.get(i));
+                }
+            }
+
+            var sorted = new ArrayList<>(quickSort(menores));
+            sorted.add(pivo);
+            sorted.addAll(quickSort(maiores));
+            return sorted;
+        }
+    }
+}

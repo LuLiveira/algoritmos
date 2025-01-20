@@ -1,5 +1,7 @@
 package main.java.com.lucas;
 
+import main.java.com.lucas.quicksort.QuickSortExample;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -65,16 +67,19 @@ public class Application {
 //        System.out.println(reverseMaxValue(List.of(9, 4, 6)));
 //        System.out.println(reverseMaxValue(0, 0, objects));
 //        System.out.println(reverseMaxValue(objects));
+
+        QuickSortExample.quickSort();
     }
 
 
     /**
      * Função criada com apoio do livro
+     *
      * @param integers
      * @return
      */
     private int reverseMaxValue(List<Integer> integers) {
-        if(integers.size() == 2){
+        if (integers.size() == 2) {
             return integers.get(0) > integers.get(1) ? integers.get(0) : integers.get(1);
         } else {
             int maxValue = reverseMaxValue(integers.subList(1, integers.size()));
@@ -84,6 +89,7 @@ public class Application {
 
     /**
      * Minha função recursiva para retornar o maior valor
+     *
      * @param actualValue
      * @param index
      * @param integers
@@ -105,6 +111,7 @@ public class Application {
 
     /**
      * Função criada com apoio do livro
+     *
      * @param integers
      * @return
      */
@@ -116,6 +123,7 @@ public class Application {
 
     /**
      * Minha função recursiva para contar o numero de elementos
+     *
      * @param totalItems
      * @param start
      * @param end
@@ -129,6 +137,7 @@ public class Application {
     /**
      * Minha função recursiva para somar os itens da lista
      * TODO criar uma versão melhorada da função que não receba posição
+     *
      * @param posicao
      * @param nums
      * @return
