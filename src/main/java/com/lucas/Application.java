@@ -1,5 +1,6 @@
 package main.java.com.lucas;
 
+import main.java.com.lucas.hashtable.HashTableExample;
 import main.java.com.lucas.quicksort.QuickSortExample;
 
 import java.util.ArrayList;
@@ -68,7 +69,8 @@ public class Application {
 //        System.out.println(reverseMaxValue(0, 0, objects));
 //        System.out.println(reverseMaxValue(objects));
 
-        QuickSortExample.quickSort();
+//        QuickSortExample.quickSort();
+        HashTableExample.example();
     }
 
 

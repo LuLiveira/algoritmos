@@ -3,19 +3,20 @@ package main.java.com.lucas.quicksort;
 import java.util.ArrayList;
 import java.util.List;
 
-public record QuickSortExample (){
+public record QuickSortExample() {
 
 
     public static void quickSort() {
-        List<Integer> example = new ArrayList<>();
-        example.add(33);
-        example.add(77);
-        example.add(11);
-        example.add(12);
-        example.add(16);
-        example.add(99);
-        example.add(143);
-        System.out.println(quickSort(example));
+        List<Integer> integerList = new ArrayList<>();
+        integerList.add(33);
+        integerList.add(77);
+        integerList.add(11);
+        integerList.add(12);
+        integerList.add(16);
+        integerList.add(99);
+        integerList.add(143);
+        i
+        System.out.println(quickSort(integerList));
     }
 
     static List<Integer> quickSort(List<Integer> integerList) {
