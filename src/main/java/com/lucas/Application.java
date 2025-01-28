@@ -1,7 +1,6 @@
 package main.java.com.lucas;
 
 import main.java.com.lucas.hashtable.HashTableExample;
-import main.java.com.lucas.quicksort.QuickSortExample;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +42,7 @@ public class Application {
     );
 
     public void main() {
+
         System.out.println("Hello, Algoritmos");
 //
 //        linearSearch();
@@ -70,7 +70,7 @@ public class Application {
 //        System.out.println(reverseMaxValue(objects));
 
 //        QuickSortExample.quickSort();
-        HashTableExample.example();
+        HashTableExample.depthFirstSearch("Voce");
     }
 
 
