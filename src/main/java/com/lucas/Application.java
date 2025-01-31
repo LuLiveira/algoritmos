@@ -1,6 +1,6 @@
 package main.java.com.lucas;
 
-import main.java.com.lucas.hashtable.HashTableExample;
+import main.java.com.lucas.hashtable.DepthFirstExample;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +70,7 @@ public class Application {
 //        System.out.println(reverseMaxValue(objects));
 
 //        QuickSortExample.quickSort();
-        HashTableExample.depthFirstSearch("Voce");
+        DepthFirstExample.depthFirstSearch("Voce");
     }
 
 

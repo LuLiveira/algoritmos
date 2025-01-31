@@ -7,7 +7,7 @@ import java.util.*;
  * @author Lucas Silva"
  * Busca em Profundidade/Largura - Depth First Serach (DFS) Algorithm
  */
-public class HashTableExample {
+public class DepthFirstExample {
 
 
     public static void depthFirstSearch(String name) {
