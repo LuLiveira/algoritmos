@@ -7,9 +7,9 @@ import java.util.Map;
 
 public class DijkstraExample2 {
 
-    private static final Map<String, Map<String, Integer>>  graph = new HashMap<>();
-    private static final Map<String, String>  parents = new HashMap<>();
-    private static final Map<String, Integer>  custo = new HashMap<>();
+    private static final Map<String, Map<String, Integer>> graph = new HashMap<>();
+    private static final Map<String, String> parents = new HashMap<>();
+    private static final Map<String, Integer> custo = new HashMap<>();
     private static final List<String> processNode = new ArrayList<>();
 
     static {
