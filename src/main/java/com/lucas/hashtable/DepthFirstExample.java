@@ -21,25 +21,28 @@ public class DepthFirstExample {
         graph.put("Thom", null);
         graph.put("Jonny", null);
 
-        example(graph, name);
+        example(graph);
     }
 
-    private static void example(Map<String, List<String>> graph, String name) {
-        var list = new ArrayList<String>();
-        var verifiedList = new ArrayList<String>();
+    private static void example(Map<String, List<String>> graph) {
 
-        list.add(name);
+        var filaDeBusca = new ArrayList<>(graph.get("Voce"));
+        var verificados = new ArrayList<>();
 
-        while (!list.isEmpty()) {
-            String first = list.removeFirst();
+        while (!filaDeBusca.isEmpty()) {
+            String first = filaDeBusca.removeFirst();
 
-            //TODO: alguma logica de verificação para encontrar um elemento X, por exemplo: Primeiro com a lestra A 'return'.
-            if (verifiedList.contains(first)) {
+            if (verificados.contains(first)) {
                 continue;
             }
 
-            list.addAll(Optional.ofNullable(graph.get(first)).orElseGet(List::of));
-            verifiedList.add(first);
+            //TODO: alguma logica de verificação para encontrar um elemento X, por exemplo: Primeiro com a lestra A 'return'.
+            if (first.startsWith("Jon")) {
+                break;
+            } else {
+                verificados.add(first);
+                filaDeBusca.addAll(Optional.ofNullable(graph.get(first)).orElseGet(List::of));
+            }
         }
     }
 }
